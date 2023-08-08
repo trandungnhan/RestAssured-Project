@@ -3,4 +3,15 @@
   "id": 1,
   "title": "The request's tile",
   "body": "The request's body"
+},
+{
+  "fields": {
+    "summary": "Summary | From Jira API",
+    "project": {
+      "key": "PILOT01"
+    },
+    "issuetype": {
+      "id": "10001"
+    }
+  }
 }
