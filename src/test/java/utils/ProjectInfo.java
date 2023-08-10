@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import model.RequestCapability;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -43,14 +44,13 @@ public class ProjectInfo implements RequestCapability {
 
     private void getIssueTypes() {
         issueTypes = projectInfo.get("issueTypes");
+
     }
 
     private void getProjectInfo() {
         String path = "/rest/api/3/project/".concat(projectKey);
 
-        String email = System.getenv("email");
-        String apiToken = System.getenv("token");
-        String encodedCredStr = AuthenticationHandler.encodedCredStr(email, apiToken);
+        String encodedCredStr = AuthenticationHandler.encodedCredStr(email, token);
 
         RequestSpecification request = given();
         request.baseUri(baseUri);
