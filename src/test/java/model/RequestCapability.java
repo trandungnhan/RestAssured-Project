@@ -7,7 +7,7 @@ import java.util.function.Function;
 public interface RequestCapability {
 
     String email = "trandungnhan89@gmail.com";
-    String token = "ATATT3xFfGF0RRzktH54C1w8C4RQ_ddaMmSgW6bJHxzDvUQm_gwYGPqjs7uvzY2G13SKLFGRE3l_IxQjYsmDCVoc6M9CXvLFT5Ez4AfV6ul4olIRZJTNXCy7B4nYspU0f727WHG0iurZi8WlJk7wufNpp_ZFkSUEzY6cYXt1gQ6EOBoJjxZfchI=9BC1F2A9";
+    String token = "ATATT3xFfGF0E3253pGmnf6iZZAmAAzJTDhyxjkSBbV8pwQw3DrTBymrK0B4dp7b7vVSUCGDcWxeBqbSSps4TDE2CrEfDhEU7emnh6UMY3TWdLxOZFNjdmQWqYLU2Ga3osBtwLEo4RQiMHoHQYEXNY4ZEQe_1Lh0BTsDcnKRgfTS77U9iIWVGzk=B4F2BF4D";
 
     Header defaultHeader = new Header("Content-type", "application/json; charset=UTF-8");
     Header accessJSONHeader = new Header("Accept", "application/json");

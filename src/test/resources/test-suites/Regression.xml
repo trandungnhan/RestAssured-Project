@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression">
+    <test name="Jira - Issue E2E" >
+        <classes>
+            <class name="test.JiraIssueCRUD" />
+        </classes>
+    </test>
+    <!--    <test name="Jira - Issue E2E" >
+            <classes>
+                <class name="test.TestNGHooks" />
+            </classes>
+        </test>-->
+    <!--    <test name="Jira - Issue E2E" parallel="classes" thread-count="4">
+            <classes>
+                <class name="test.TestNGHooks" />
+                <class name="test.TestNGHooks2" />
+            </classes>
+        </test>-->
+    <!--    <test name="Jira - Issue E2E">
+            <classes>
+                <class name="test.TestNGHooks" />
+                <class name="test.TestNGHooks2" />
+            </classes>
+        </test>-->
+</suite>

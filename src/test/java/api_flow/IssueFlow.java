@@ -2,6 +2,7 @@ package api_flow;
 
 import builder.BodyJSONBuilder;
 import builder.IssueContentBuilder;
+import io.qameta.allure.Step;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -41,6 +42,7 @@ public class IssueFlow {
         this.status = "To do";
     }
 
+    @Step("Creating Jira issue")
     public void createIssue(){
         ProjectInfo projectInfo = new ProjectInfo(baseUri, projectKey);
         String taskTypeId = projectInfo.getIssueTypeId(issueTypeStr);
@@ -57,6 +59,7 @@ public class IssueFlow {
         createdIssueKey = responseBody.get("key");
     }
 
+    @Step("Verifying Issue Details")
     public void verifyIssueDetails(){
         Map<String, String> issueInfo = getIssueInfo();
         String expectedSummary = issueFields.getFields().getSummary();
@@ -69,6 +72,7 @@ public class IssueFlow {
         System.out.println("actualStatus: " + actualStatus);
     }
 
+    @Step("Updating Jira issue")
     public void updateIssue(String issueStatusStr){
         String targetTransitionId = null;
         for (String transitionId : transitionTypeMap.keySet()) {
@@ -95,6 +99,7 @@ public class IssueFlow {
         System.out.println("expectedIssueStatus: " + expectedIssueStatus);
     }
 
+    @Step("Deleting Jira issue")
     public void deleteIssue(){
         String path = issuePathPrefix + "/" + createdIssueKey;
         request.delete(path);
